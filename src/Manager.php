@@ -23,7 +23,6 @@ class Manager {
      * @param array|string $hooks
      * @param Callable $item
      * @param bool $once Only call the event once (act like a callback)
-     * @param string $id Add an id to the event, making it removable later
      */
     public function listen($namespace, $hooks, $item, $once = false) {
         $hooks = (array) $hooks;
@@ -38,6 +37,7 @@ class Manager {
             elseif(!isset($this->listeners[$namespace][$hook]))
                 $this->listeners[$namespace][$hook] = [];
 
+            // if the attachment is not callable, it will assume that the $hook is a method on the class
             if(!is_callable($item))
                 $listener = [$item, $hook];
             else
@@ -82,6 +82,11 @@ class Manager {
         }
     }
 
+    /**
+     * Make namespace if it doesn't exist
+     *
+     * @param $namespace
+     */
     protected function findOrMakeNamespace($namespace) {
         if(!isset($this->listeners[$namespace]))
             $this->listeners[$namespace] = [];
