@@ -1,6 +1,6 @@
 {
     "name"       : "milkyway-multimedia/events-handler",
-    "description": "An events dispatcher and handler",
+    "description": "A framework agnostic events dispatcher and handler",
     "keywords"   : ["utilities", "mwm", "events"],
     "license"    : "MIT",
     "authors"    : [
