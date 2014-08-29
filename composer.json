@@ -1,0 +1,20 @@
+{
+    "name"       : "milkyway-multimedia/events-handler",
+    "description": "An events dispatcher and handler",
+    "keywords"   : ["utilities", "mwm", "events"],
+    "license"    : "MIT",
+    "authors"    : [
+        {
+            "name" : "Mellisa Hankins",
+            "email": "mell@milkywaymultimedia.com.au"
+        }
+    ],
+    "require"    : {
+        "silverstripe/framework"                  : "~3.1"
+    },
+	"autoload": {
+		"psr-4": {
+			"Milkyway\\Events\\": "src/"
+		}
+	}
+}
